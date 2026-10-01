@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>WorkBuddy 签到</title>
+    <link rel="icon" href="/workbuddy.png">
+    <link rel="stylesheet" href="/app.css?v=2">
+    <script src="/app.js?v=2" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <img class="brand-icon" src="/workbuddy.png" alt="">
+      <div>
+        <h1>WorkBuddy 签到</h1>
+        <p>多账号 · 每日 08:00（北京时间）</p>
+      </div>
+      <span class="service-mark" aria-label="Cloudflare Worker"></span>
+    </header>
+
+    <main>
+      <section class="access-row" aria-label="管理口令">
+        <label for="password">管理口令</label>
+        <input id="password" type="password" autocomplete="current-password" spellcheck="false">
+        <button id="refresh" class="secondary" type="button">刷新状态</button>
+      </section>
+
+      <section class="accounts-panel" aria-label="账号状态">
+        <div class="section-heading">
+          <div class="section-title">
+            <h2>已连接账号</h2>
+            <span id="account-count" class="account-count">0 / 10</span>
+          </div>
+          <button id="connect" class="primary" type="button">添加账号</button>
+        </div>
+        <div id="accounts" class="accounts-list"></div>
+      </section>
+
+      <section class="actions" aria-label="操作">
+        <button id="run-all" class="secondary" type="button">全部签到</button>
+        <a id="login-link" class="login-link" target="_blank" rel="noopener noreferrer" hidden>打开 WorkBuddy 官方登录页</a>
+      </section>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </main>
+  </body>
+</html>
